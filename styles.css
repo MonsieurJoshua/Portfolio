@@ -36,9 +36,9 @@ body {
 }
 
 .dark {
-  --clr-bg: #000000;
-  --clr-bg-alt: #333333;
-  --clr-fg: #ffffff;
+  --clr-bg: #1a1a1a;
+  --clr-bg-alt: #2a2a2a;
+  --clr-fg: #eaeaea;
   --clr-fg-alt: #ffffff;
   --clr-primary: #ffffff;
   --shadow: rgba(43, 43, 43, 0.16) 0px 10px 36px 0px,
