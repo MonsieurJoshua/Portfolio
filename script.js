@@ -1,12 +1,12 @@
-// Select elements
+// Select the body and buttons for theme and navigation toggling
 const body = document.body;
-const btnTheme = document.querySelector('.theme-toggle');
-const btnHamburger = document.querySelector('.hamburger-toggle');
+const btnTheme = document.querySelector('.fa-moon');
+const btnHamburger = document.querySelector('.fa-bars');
 
 // Function to add theme classes
 const addThemeClass = (bodyClass, btnClass) => {
-    body.classList.add(bodyClass);
-    btnTheme.classList.add(btnClass);
+  body.classList.add(bodyClass);
+  btnTheme.classList.add(btnClass);
 };
 
 // Retrieve saved theme settings from localStorage
@@ -15,59 +15,63 @@ const getBtnTheme = localStorage.getItem('portfolio-btn-theme');
 
 // Apply saved theme settings
 if (getBodyTheme && getBtnTheme) {
-    addThemeClass(getBodyTheme, getBtnTheme);
+  addThemeClass(getBodyTheme, getBtnTheme);
 }
 
-// Check if current theme is dark
+// Function to check if the current theme is dark
 const isDark = () => body.classList.contains('dark');
 
-// Set the theme
+// Function to set the theme
 const setTheme = (bodyClass, btnClass) => {
-    body.classList.remove(localStorage.getItem('portfolio-theme') || '');
-    btnTheme.classList.remove(localStorage.getItem('portfolio-btn-theme') || '');
+  // Remove previous theme classes
+  body.classList.remove(localStorage.getItem('portfolio-theme'));
+  btnTheme.classList.remove(localStorage.getItem('portfolio-btn-theme'));
 
-    addThemeClass(bodyClass, btnClass);
+  // Add new theme classes
+  addThemeClass(bodyClass, btnClass);
 
-    localStorage.setItem('portfolio-theme', bodyClass);
-    localStorage.setItem('portfolio-btn-theme', btnClass);
+  // Save new theme settings to localStorage
+  localStorage.setItem('portfolio-theme', bodyClass);
+  localStorage.setItem('portfolio-btn-theme', btnClass);
 };
 
-// Toggle theme
+// Toggle between light and dark themes
 const toggleTheme = () => {
-    isDark() ? setTheme('light', 'fa-moon') : setTheme('dark', 'fa-sun');
+  isDark() ? setTheme('light', 'fa-moon') : setTheme('dark', 'fa-sun');
 };
 
-// Event listener for theme toggle
+// Add event listener for theme toggle button
 btnTheme.addEventListener('click', toggleTheme);
 
-// Toggle navigation menu
+// Function to toggle the navigation menu display
 const toggleNavMenu = () => {
-    const navUl = document.querySelector('.nav__list');
-    btnHamburger.classList.toggle('fa-bars');
-    btnHamburger.classList.toggle('fa-times');
-    navUl.classList.toggle('display-nav-list');
+  const navUl = document.querySelector('.nav__list');
+  btnHamburger.classList.toggle('fa-bars');
+  btnHamburger.classList.toggle('fa-times');
+  navUl.classList.toggle('display-nav-list');
 };
 
-// Event listener for hamburger menu toggle
+// Add event listener for navigation menu toggle button
 btnHamburger.addEventListener('click', toggleNavMenu);
 
-// Scroll-to-top button visibility
+// Function to handle scroll-to-top button visibility
 const handleScroll = () => {
-    const btnScrollTop = document.querySelector('.scroll-top');
-    const scrollPosition = document.documentElement.scrollTop || body.scrollTop;
+  const btnScrollTop = document.querySelector('.scroll-top');
+  const scrollPosition = document.documentElement.scrollTop || body.scrollTop;
 
-    if (scrollPosition > 500) {
-        btnScrollTop.style.display = 'block';
-    } else {
-        btnScrollTop.style.display = 'none';
-    }
+  // Show button when scrolling down past 500px
+  if (scrollPosition > 500) {
+    btnScrollTop.style.display = 'block';
+  } else {
+    btnScrollTop.style.display = 'none';
+  }
 };
 
-// Scroll event for scroll-to-top functionality
+// Add scroll event listener for scroll-to-top functionality
 document.addEventListener('scroll', handleScroll);
 
-// Smooth scroll to top
-document.querySelector('.scroll-top a')?.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+// Add click event listener to scroll-to-top button
+document.querySelector('.scroll-top a').addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
