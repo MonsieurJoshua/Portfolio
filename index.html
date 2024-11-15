@@ -1,53 +1,238 @@
+<!-- Go to this github repo  https://github.com/ashiksanyo10/Port_Temp.git and clone it to your local machine -->
+<!-- Open the local copy of code and edit the templete -->
+
+
+<!-- Dont alter any tags, fill in you information on required field only and dont alter style.css and javascript file-->
+<!-- once editing the templete, Create a github repo and push the code-->
+<!-- you can host the website on gitpages or netlify  -->
+<!---->
+
+
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body class="light">
-    <header>
-        <button class="hamburger-toggle fa fa-bars"></button>
-        <nav>
-            <ul class="nav__list">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <button class="theme-toggle fa fa-moon"></button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/fa62c117c7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Joshua Eapen</title>    <!-- Change it your name  --> .
+  </head>
+  <body class="light" id="top">
+    <header class="header center">
+      <h3>
+        <a href="https://www.linkedin.com/in/joshua-eapen-068425202/" class="link"  
+          >{JE}. <!--insert your initials here --></a
+        >
+      </h3> <!--use the linkedIn or any link in above href-->
+
+      <nav class="nav center">
+        <ul class="nav__list center">
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#projects">Projects.</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#skills">Skills.</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#Internship">Internship.</a>
+          </li>
+          <!--   <li class="nav__list-item">
+            <a class="link link--nav" href="#Exp">Experience</a>
+          </li>-->
+        </ul>
+
+        <button type="button" aria-label="toggle theme" class="btn btn--icon">
+          <i aria-hidden="true" id="btn-theme" class="fas fa-moon"></i>
+        </button>
+
+        <button
+          type="button"
+          aria-label="toggle navigation"
+          class="btn btn--icon nav__hamburger"
+        >
+          <i aria-hidden="true" class="fas fa-bars"></i>
+        </button>
+      </nav>
     </header>
 
     <main>
-        <section id="home">
-            <h1>Welcome to My Portfolio</h1>
-        </section>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>This is where you can describe yourself.</p>
-        </section>
-        <section id="projects">
-            <h2>Projects</h2>
-            <p>Showcase your projects here.</p>
-        </section>
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <p>Include your contact details here.</p>
-        </section>
-    </main>
+      <!-- About -->
+      <div class="about center">
+        <h1>Hi, I am <span class="about__name">Joshua Eapen.</span></h1>
+        <h2 class="about__role"></h2>
+        <p class="about__desc"> <!-- Edit the About make sure you add your degree!-->
+          I'm a Tech geek living in Bangalore, India. I love to solve problems and build things. I am presently an under grad Computer Science student at Christ University.
+        </p> <!-- about you -->
+        <br>
+        <a href="mailto:joshua1eapen2004@gmail.com">Mail : joshua1eapen2004@gmail.com.</a><p> Contact : +91 8129963104.</p>  <!--Change it to your mail id and contact no-->
+      </br>
+      
 
-    <footer>
-        <a href="https://github.com/your-profile" class="btn btn-github" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/your-profile" class="btn btn-linkedin" target="_blank">LinkedIn</a>
+        <div class="about__contact center">
+          <a href="https://drive.google.com/file/d/1fiYlv7Ou0tKWSdUlQwpc5Ye3hDEya3kK/view" target="_blank"  > <!-- drive link for resume-->
+            <span class="btn btn--outline">Resume.</span> 
+          </a>
+
+          <a
+            href="https://github.com/MonsieurJoshua" target="_blank"
+            aria-label="github"
+            class="link link--icon"
+          >
+            <i aria-hidden="true" class="fab fa-github"></i>
+          </a> <!-- Github profile Link-->
+
+          <a
+            href="https://www.linkedin.com/in/joshua-eapen-068425202/" target="_blank"  
+            aria-label="linkedin"
+            class="link link--icon"
+          > 
+            <i aria-hidden="true" class="fab fa-linkedin"></i>
+          </a> <!-- LinledIn profile Link-->
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <section id="projects" class="section projects">
+        <h2 class="section__title">Projects.</h2>
+
+        <div class="projects__grid">
+          <div class="project">
+            <h3>DevMatrix.</h3> <!--Peoject Title -->
+            <p class="project__description">
+              A Website designed to make the lives of UI/UX designers easier. Providing precoded buttons and UI elements.
+            </p> <!--Project description-->
+            <ul class="project__stack">
+              <li class="project__stack-item">HTML</li>
+              <li class="project__stack-item">CSS</li>
+              <li class="project__stack-item">JavaScript</li>
+              <li class="project__stack-item">NodeJS</li>
+              <li class="project__stack-item">MongoDB</li>
+            </ul>
+
+            <a
+              href="https://github.com/Hasib072/DevMatrix" target="_blank"
+              aria-label="source code"
+              class="link link--icon"
+            >  <!--Project link-->
+
+              <i aria-hidden="true" class="fab fa-github"></i>
+            </a>
+            <a
+              href=""
+              aria-label="live preview"
+              class="link link--icon"
+            > <!--Project demo or git link-->
+              <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+
+          <div class="project">
+            <h3>Lock-In.</h3>
+            <p class="project__description">
+              A Web based game designed to improve in-game aim accuracy.
+            </p>
+            <ul class="project__stack">
+              <li class="project__stack-item">HTML</li>
+              <li class="project__stack-item">CSS</li>
+              <li class="project__stack-item">JavaScript</li>
+              <li class="project__stack-item">Firebase</li>
+              <li class="project__stack-item">Python(scikit-learn)</li>
+            </ul>
+
+            <a
+              href="" target="_blank"
+              aria-label="" target="_blank"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fab fa-github"></i>
+            </a>
+            <a
+              href=""
+              aria-label="live preview"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+        
+
+      </section>
+          
+      <!--<section id="Internship" class="section Internship" id="Internship">
+        <h2 class="section__title">Internships & Certifications</h2>
+
+    
+        <a
+          href=""  
+          aria-label="" target="_blank"
+          class="link link--icon"
+        > <!-- Include the certification links and  -->
+         <!-- <i aria-hidden="true" class="fab fa-github"></i>
+        </a>
+        <a
+          href=""
+          aria-label="live preview"
+          class="link link--icon"
+        >
+          <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+    </div>
+  </section>-->
+
+ <!-- duplicate the above section and you can change it to paper or experience-->
+
+      
+      <!-- Skills -->
+      <section class="section skills" id="skills">
+        <h2 class="section__title">Skills.</h2>
+        <ul class="skills__list">
+          <li class="skills__list-item btn btn--plain">HTML</li>                        <!--You can fill in the elective course and you can remove extras-->
+          <li class="skills__list-item btn btn--plain">CSS</li>
+          <li class="skills__list-item btn btn--plain">JavaScript</li>
+          <li class="skills__list-item btn btn--plain">MS Office</li>
+          <li class="skills__list-item btn btn--plain">Python</li>
+          <li class="skills__list-item btn btn--plain">Machine Learning</li>
+          <li class="skills__list-item btn btn--plain">Adobe Photoshop</li>
+          <li class="skills__list-item btn btn--plain">Blender</li>
+          <li class="skills__list-item btn btn--plain">FL Studio</li>
+          <li class="skills__list-item btn btn--plain">BandLab</li>
+          <li class="skills__list-item btn btn--plain">Ableton Live 10 Lite</li>
+          <li class="skills__list-item btn btn--plain">MySQL</li>
+          <li class="skills__list-item btn btn--plain">Soundtrap</li>
+          <li class="skills__list-item btn btn--plain">Cubase AI</li>
+        </ul>
+      </section>
+
+    <footer class="footer">
+      <a
+        href="" 
+        class="link footer__link"
+      >  
+        Created By Joshua Eapen. <!-- edit it to your name -->
+      </a>
     </footer>
 
+    <div class="scroll-container">
     <div class="scroll-top">
-        <a href="#">⬆</a>
+      <a aria-label="Scroll up" href="#top">
+        <i aria-hidden="true" class="fas fa-arrow-up"></i>
+      </a>
+    </div>
     </div>
 
-    <script src="script.js"></script>
-</body>
+    <script src="./script.js"></script>
+  </body>
 </html>
